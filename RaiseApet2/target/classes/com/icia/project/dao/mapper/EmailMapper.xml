@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+ "http://mybatis.org/dtb/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icia.project.dao.UserDaoInterface">
+
+	<!-- 유저 인증키 생성 메소드 -->
+	<insert id="GetKey" parameterType="Map">
+		UPDATE MEMBERS SET KEY=#{param2} WHERE USERID=#{param1}
+	</insert>
+	
+	<!-- 회원 인증키(난수) Y로 변경 -->
+	<update id="alter_userKey" parameterType="Map">
+		UPDATE MEMBERS SET KEY='Y' WHERE USERID=#{param1} AND KEY=#{param2}
+	</update>
+</mapper>
