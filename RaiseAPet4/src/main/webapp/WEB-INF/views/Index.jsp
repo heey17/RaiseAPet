@@ -69,7 +69,7 @@
 						<a href="reviewList">리뷰 리스트</a>
 					</c:if>
 					<c:if test="${not empty sessionScope.loginUser }">
-						<a href=""><img src="resources/svg/cart.svg" alt="Cart Image" style="width:25px; height:25px; float:right;"></a>
+						<a id="popUpBtnBasket"><img src="resources/svg/cart.svg" alt="Cart Image" style="width:25px; height:25px; float:right;"></a>
 						<!-- 추가 -->
 						<a onclick="couponCount()"><img src="resources/svg/user.svg" alt="MyPage Image" style="width:25px; height:25px; float:right;"></a>
 						<a href="memberLogout"><img src="resources/svg/lock-open.svg" alt="Logout Image" style="width:25px; height:25px; float:right;"></a>
@@ -222,4 +222,20 @@
 	<script src="resources/common-js/scripts.js"></script>
 
 </body>
+<!-- 팝업창 띄우기 start -->
+<script>
+	var popUpBtnBasket = document.getElementById("popUpBtnBasket");
+	var mywindow;
+
+	var popupX = (window.screen.width / 2) - (900 / 2);
+	// &nbsp; 만들 팝업창 좌우 크기의 1/2 만큼 보정값으로 빼주었음
+	
+	var popupY= (window.screen.height /2) - (600 / 2);
+	// &nbsp; 만들 팝업창 상하 크기의 1/2 만큼 보정값으로 빼주었음
+
+	// 장바구니
+	popUpBtnBasket.addEventListener("click", function(){
+		mywindow = window.open("memberBasketList", "mywindow", "width=900, height=600, left=" + popupX + ", top=" + popupY);
+	});
+</script>
 </html>
