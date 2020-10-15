@@ -44,5 +44,12 @@ public class MedicalDAO {
 	public void ReservationPoint(MemberDTO member) {
 		sql.update("medical.reservationPoint",member);
 	}
+	
+	//포인트적립
+	public void medicalReservationAddPoint(MedicalDTO medical) {
+		sql.update("medical.memberAddpoint",medical);		
+	}
+	
+
 
 }

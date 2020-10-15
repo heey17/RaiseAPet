@@ -214,7 +214,7 @@ function usePoint(){
 	
 
 	//사용할려는 포인트가 현재포인트보다 높을땐 포인트 초과창을 띄우게 되고 아니면 총가격에서 사용할려는 포인트를 빼준다.
-	if(userPoint >= beautyReservePointUseing & price >= beautyReservePointUseing & price*0.07 >= beautyReservePointUseing & beautyReservePointUseing >= 0){
+	if(Point >= beautyReservePointUseing & price >= beautyReservePointUseing & price*0.07 >= beautyReservePointUseing & beautyReservePointUseing >= 0){
 		var beautyReservePrice = price-beautyReservePointUseing
 		
 		document.getElementById('point').value = userPoint;

@@ -33,5 +33,11 @@
 	SET USERPOINT = USERPOINT - #{userPoint}
 	WHERE USERID = #{userId}
   </update>
+    <!--포인트적립-->
+  <update id="memberAddpoint" parameterType="medical">
+  	UPDATE MEMBERS
+	SET USERPOINT = USERPOINT + (#{medicalReservePrice}*0.005)
+	WHERE USERID = #{medicalReserveUserName}
+  </update>
 
   </mapper>

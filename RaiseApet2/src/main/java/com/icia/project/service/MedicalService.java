@@ -75,11 +75,12 @@ public class MedicalService {
 			mav.addObject("coupon", coupon);
 			mav.addObject("member", member);
 			mav.addObject("medical", medical);
-			System.out.println("medical=="+medical);
 			mav.setViewName("MedicalReservationKakao");
 		} else {
 			// 아니면 여기서 예약하고 끝
 			mddao.medicalReservation(medical);
+			//포인트적립
+			mddao.medicalReservationAddPoint(medical);
 			mav.setViewName("MeautyReservationSuccess");
 		}
 		return mav;
@@ -92,7 +93,6 @@ public class MedicalService {
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("userId", member.getUserId());
 			map.put("couponCode", coupon.getCouponCode());
-			System.out.println("userId"+map);
 			mddao.ReservationCoupon(map);
 		}
 
@@ -103,6 +103,9 @@ public class MedicalService {
 
 		// 결제 정보 저장하기
 		mddao.medicalReservation(medical);
+		
+		//결제정보 저장 후 포인트 적립
+		mddao.medicalReservationAddPoint(medical);
 
 		return md;
 	}

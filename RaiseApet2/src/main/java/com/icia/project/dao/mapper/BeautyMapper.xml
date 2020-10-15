@@ -35,5 +35,11 @@
 	SET USERPOINT = USERPOINT - #{userPoint}
 	WHERE USERID = #{userId}
   </update>
+  <!--포인트적립-->
+  <update id="memberAddpoint" parameterType="beauty">
+  	UPDATE MEMBERS
+	SET USERPOINT = USERPOINT + (#{beautyReservePrice}*0.005)
+	WHERE USERID = #{beautyReserveUserName}
+  </update>
   
   </mapper>

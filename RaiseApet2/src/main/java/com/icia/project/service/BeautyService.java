@@ -82,6 +82,8 @@ public class BeautyService {
 		}else {
 			//아니면 여기서 예약하고 끝
 			btdao.beautyReservation(beauty);
+			//회원포인트 적립
+			btdao.beautyReservationAddPoint(beauty);
 			mav.setViewName("BeautyReservationSuccess");
 		}
 		return mav;
@@ -105,6 +107,8 @@ public class BeautyService {
 		
 		//결제 정보 저장하기
 		btdao.beautyReservation(beauty);
+		//회원포인트 적립
+		btdao.beautyReservationAddPoint(beauty);
 		
 		return bdl;
 	}

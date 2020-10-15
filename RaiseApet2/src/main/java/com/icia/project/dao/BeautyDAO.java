@@ -44,6 +44,11 @@ public class BeautyDAO {
 	public void ReservationPoint(MemberDTO member) {
 		sql.update("beauty.reservationPoint",member);
 	}
+	
+	//포인트적립
+	public void beautyReservationAddPoint(BeautyDTO beauty) {
+		sql.update("beauty.memberAddpoint",beauty);		
+	}
 
 	
 	
