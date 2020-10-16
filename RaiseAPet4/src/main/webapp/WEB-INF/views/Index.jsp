@@ -69,6 +69,7 @@
 						<a href="reviewList">리뷰 리스트</a>
 					</c:if>
 					<c:if test="${not empty sessionScope.loginUser }">
+						<!-- 추가 -->
 						<a id="popUpBtnBasket"><img src="resources/svg/cart.svg" alt="Cart Image" style="width:25px; height:25px; float:right;"></a>
 						<!-- 추가 -->
 						<a onclick="couponCount()"><img src="resources/svg/user.svg" alt="MyPage Image" style="width:25px; height:25px; float:right;"></a>
@@ -222,6 +223,7 @@
 	<script src="resources/common-js/scripts.js"></script>
 
 </body>
+<!-- 추가 -->
 <!-- 팝업창 띄우기 start -->
 <script>
 	var popUpBtnBasket = document.getElementById("popUpBtnBasket");

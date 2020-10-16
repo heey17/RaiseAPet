@@ -1180,8 +1180,10 @@ public class MemberService {
 		// [회원 정보 조회]
 
 		int couponCount = mDAO.couponCount(userId);
+		MemberDTO memberInfo = mDAO.selectMember(userId);
 		
 		session.setAttribute("couponCount", couponCount);
+		session.setAttribute("loginUser", memberInfo);
 				
 		session.removeAttribute("newAddress");
 		// 새 주소 session 삭제
@@ -1421,8 +1423,10 @@ public class MemberService {
 		
 		// ------------- 포인트 차감 후 회원 정보 조회 -------------
 		int couponCount = mDAO.couponCount(userId);
+		MemberDTO memberInfo = mDAO.selectMember(userId);
 		
 		session.setAttribute("couponCount", couponCount);
+		session.setAttribute("loginUser", memberInfo);
 		
 		session.removeAttribute("newAddress");
 		// 새 주소 session 삭제

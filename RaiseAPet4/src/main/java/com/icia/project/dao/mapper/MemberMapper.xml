@@ -12,7 +12,7 @@
 	<select id="phoneOverlap" parameterType="String" resultType="String">
 		SELECT USERPHONE FROM MEMBERS WHERE USERPHONE=#{userPhone}
 	</select>
-	
+
 	<!-- email 중복 검사 -->
 	<select id="emailOverlap" parameterType="String" resultType="String">
 		SELECT USEREMAIL FROM MEMBERS WHERE USEREMAIL=#{userEmail}
